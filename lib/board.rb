@@ -51,11 +51,11 @@ class Board
  
 end
 
-test = Board.new
-test.display
-test.insert_symbol("X",1)
-test.display
-test.insert_symbol("O",1)
-test.display
-test.insert_symbol("X",2)
-test.display
+# test = Board.new
+# test.display
+# test.insert_symbol("X",1)
+# test.display
+# test.insert_symbol("O",1)
+# test.display
+# test.insert_symbol("X",2)
+# test.display
