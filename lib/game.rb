@@ -21,10 +21,13 @@ class Game
     @players << player
   end
 
+  private
+
   def switch_turn
     @players.rotate
   end
 
+  
 
 end
 
