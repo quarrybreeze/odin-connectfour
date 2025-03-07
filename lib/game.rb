@@ -10,6 +10,8 @@ class Game
     self.play_game
   end
 
+  private
+
   def play_game
     self.create_player
     self.create_player
@@ -19,19 +21,14 @@ class Game
     end
   end
 
-  def player_turn
-    current_player = @players[0].symbol
-    puts "Player #{current_player}, choose a column between 1 and 7 to drop your symbol"
-    input_column = gets.chomp.to_i
+  def switch_turn
+    @players = @players.rotate
+  end
 
-    if input_column > 7 || input_column < 0
-      puts "Error, please choose a valid column"
-      self.player_turn
-    else
-      @board.insert_symbol(current_player,input_column)
-      self.gameover?
-    end
-    self.display
+  def create_player
+    player = Player.new
+    player.set_symbol
+    @players << player
   end
 
   def gameover?
@@ -48,18 +45,19 @@ class Game
     @board.display
   end
 
-  def create_player
-    player = Player.new
-    player.set_symbol
-    @players << player
+  def player_turn
+    current_player = @players[0].symbol
+    puts "Player #{current_player}, choose a column between 1 and 7 to drop your symbol"
+    input_column = gets.chomp.to_i
+
+    if input_column > 7 || input_column < 0
+      puts "Error, please choose a valid column"
+      self.player_turn
+    else
+      @board.insert_symbol(current_player,input_column)
+      self.gameover?
+    end
+    self.display
   end
-
-  private
-
-  def switch_turn
-    @players = @players.rotate
-  end
-
-
 
 end
