@@ -1,4 +1,3 @@
-require_relative 'lib/player'
+require_relative 'lib/game'
 
-test = Player.new
-test.set_symbol
+game = Game.new

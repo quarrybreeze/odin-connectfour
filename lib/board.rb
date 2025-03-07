@@ -88,9 +88,14 @@ class Board
   end
 
   def four_connected?(tile1,tile2,tile3,tile4)
-    tile1.display == tile2.display &&
-    tile2.display == tile3.display &&
-    tile3.display == tile4.display
+    if (tile1.display != " " &&
+      tile2.display != " " &&
+      tile3.display != " " &&
+      tile4.display != " ")
+      tile1.display == tile2.display &&
+      tile2.display == tile3.display &&
+      tile3.display == tile4.display
+    end
   end
 
   def column_search
@@ -166,57 +171,57 @@ class Board
  
 end
 
-test = Board.new
-test.insert_symbol("X",1)
-test.insert_symbol("O",1)
-test.insert_symbol("X",1)
-test.insert_symbol("X",1)
-test.insert_symbol("O",1)
-test.insert_symbol("X",1)
-test.display
-test.insert_symbol("X",2)
-test.insert_symbol("X",2)
-test.insert_symbol("X",2)
-test.insert_symbol("O",2)
-test.insert_symbol("X",2)
-test.insert_symbol("O",2)
-test.display
-test.insert_symbol("X",3)
-test.insert_symbol("X",3)
-test.insert_symbol("X",3)
-test.insert_symbol("O",3)
-test.insert_symbol("X",3)
-test.insert_symbol("O",3)
-test.display
-test.insert_symbol("X",4)
-test.insert_symbol("O",4)
-test.insert_symbol("X",4)
-test.insert_symbol("O",4)
-test.insert_symbol("X",4)
-test.insert_symbol("O",4)
-test.display
-test.insert_symbol("X",5)
-test.insert_symbol("O",5)
-test.insert_symbol("X",5)
-test.insert_symbol("O",5)
-test.insert_symbol("X",5)
-test.insert_symbol("O",5)
-test.display
-test.insert_symbol("X",6)
-test.insert_symbol("O",6)
-test.insert_symbol("X",6)
-test.insert_symbol("O",6)
-test.insert_symbol("X",6)
-test.insert_symbol("O",6)
-test.display
-# puts test.full?
-test.insert_symbol("X",7)
-test.insert_symbol("O",7)
-test.insert_symbol("X",7)
-test.insert_symbol("O",7)
-test.insert_symbol("X",7)
-test.insert_symbol("O",7)
-test.display
+# test = Board.new
+# test.insert_symbol("X",1)
+# test.insert_symbol("O",1)
+# test.insert_symbol("X",1)
+# test.insert_symbol("X",1)
+# test.insert_symbol("O",1)
+# test.insert_symbol("X",1)
+# test.display
+# test.insert_symbol("X",2)
+# test.insert_symbol("X",2)
+# test.insert_symbol("X",2)
+# test.insert_symbol("O",2)
+# test.insert_symbol("X",2)
+# test.insert_symbol("O",2)
+# test.display
+# test.insert_symbol("X",3)
+# test.insert_symbol("X",3)
+# test.insert_symbol("X",3)
+# test.insert_symbol("O",3)
+# test.insert_symbol("X",3)
+# test.insert_symbol("O",3)
+# test.display
+# test.insert_symbol("X",4)
+# test.insert_symbol("O",4)
+# test.insert_symbol("X",4)
+# test.insert_symbol("O",4)
+# test.insert_symbol("X",4)
+# test.insert_symbol("O",4)
+# test.display
+# test.insert_symbol("X",5)
+# test.insert_symbol("O",5)
+# test.insert_symbol("X",5)
+# test.insert_symbol("O",5)
+# test.insert_symbol("X",5)
+# test.insert_symbol("O",5)
+# test.display
+# test.insert_symbol("X",6)
+# test.insert_symbol("O",6)
+# test.insert_symbol("X",6)
+# test.insert_symbol("O",6)
+# test.insert_symbol("X",6)
+# test.insert_symbol("O",6)
+# test.display
+# # puts test.full?
+# test.insert_symbol("X",7)
+# test.insert_symbol("O",7)
+# test.insert_symbol("X",7)
+# test.insert_symbol("O",7)
+# test.insert_symbol("X",7)
+# test.insert_symbol("O",7)
+# test.display
 # puts test.full?
 # p test.tiles[0][0].display
 # p test.tiles[1][0].display
